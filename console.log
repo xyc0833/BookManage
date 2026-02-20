@@ -1,0 +1,10 @@
+2月 19, 2026 8:46:29 下午 book.manage.Main lambda$addStudent$1
+信息: 新添加了一条学生信息Student(sid=0, name=于额, sex=男, grade=5)
+2月 19, 2026 8:50:01 下午 book.manage.Main lambda$addBook$0
+信息: 新添加了一条书籍信息Book(bid=0, title=东京爱情, info=故事, price=14.0)
+2月 20, 2026 9:43:37 上午 book.manage.Main lambda$addStudent$4
+信息: 新添加了一条学生信息Student(sid=0, name=巍山, sex=女, grade=2018)
+2月 20, 2026 9:44:04 上午 book.manage.Main lambda$addBook$3
+信息: 新添加了一条书籍信息Book(bid=0, title=二维染, info= in佛, price=16.0)
+2月 20, 2026 9:44:27 上午 book.manage.Main lambda$addBorrow$2
+信息: 新添加了一条借阅信息书籍号:4学号：3
