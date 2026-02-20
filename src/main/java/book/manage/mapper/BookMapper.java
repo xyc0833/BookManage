@@ -36,4 +36,10 @@ public interface BookMapper {
 
     @Select("select * from book where bid = #{bid}")
     Book getBookByBid(int bid);
+
+    @Select("select * from student")
+    List<Student> getStudentList();
+
+    @Select("select * from book")
+    List<Book> getBookList();
 }

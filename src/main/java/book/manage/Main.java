@@ -35,6 +35,8 @@ public class Main {
                 System.out.println("2. 录入书籍信息");
                 System.out.println("3. 查阅借阅信息");
                 System.out.println("4. 添加借阅信息");
+                System.out.println("5. 查看学生列表");
+                System.out.println("6. 查看书籍列表");
                 System.out.print("输入您想要执行的操作(输入其他任意数字退出): ");
                 int input;
                 try{
@@ -56,6 +58,12 @@ public class Main {
                     case 4:
                         addBorrow(scanner);
                         break;
+                    case 5:
+                        showStudent();
+                        break;
+                    case 6:
+                        showBook();
+                        break;
                     default:
                         return;
                 }
@@ -65,7 +73,26 @@ public class Main {
         }
     }
 
-    //添加查阅信息
+    //查看学生信息
+    private static void showStudent(){
+        SqlUtil.doSqlWork(mapper -> {
+            mapper.getStudentList().forEach(student -> {
+                System.out.println(student.toString());
+            });
+        });
+    }
+
+    //查看书籍信息
+    private static void showBook(){
+        SqlUtil.doSqlWork(mapper -> {
+            mapper.getBookList().forEach(book -> {
+                System.out.println(book.toString());
+                //System.out.println();
+            });
+        });
+    }
+
+    //添加查阅信息 (学生和书籍的关系)
     private static void showBorrow(){
         SqlUtil.doSqlWork(mapper -> {
             mapper.getBorrowList().forEach(borrow -> {

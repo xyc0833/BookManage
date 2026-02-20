@@ -296,92 +296,7 @@ public static void insertBook(Book book) {
 /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home/bin/java -javaagent:/Users/xuyaochen/Library/Caches/JetBrains/IntelliJIdea2025.3/captureAgent/debugger-agent.jar=file:///var/folders/_g/7893c3xj2dj40fx6k2bwhc3m0000gn/T/capture8226607154169222907.props -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=51849 -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -Ddebugger.agent.enable.coroutines=true -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true -Ddebugger.async.stack.trace.for.all.threads=true -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/xuyaochen/.m2/repository/org/junit/platform/junit-platform-launcher/1.8.1/junit-platform-launcher-1.8.1.jar:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar:/Applications/IntelliJ IDEA.app/Contents/plugins/junit/lib/junit6-rt.jar:/Applications/IntelliJ IDEA.app/Contents/plugins/junit/lib/junit5-rt.jar:/Applications/IntelliJ IDEA.app/Contents/plugins/junit/lib/junit-rt.jar:/Users/xuyaochen/FuRiIT/project/BookManage/target/test-classes:/Users/xuyaochen/FuRiIT/project/BookManage/target/classes:/Users/xuyaochen/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/Users/xuyaochen/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar:/Users/xuyaochen/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/xuyaochen/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/xuyaochen/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/xuyaochen/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/xuyaochen/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar:/Users/xuyaochen/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/Users/xuyaochen/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/Users/xuyaochen/.m2/repository/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar:/Users/xuyaochen/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar:/Users/xuyaochen/.m2/repository/org/mybatis/mybatis/3.5.7/mybatis-3.5.7.jar com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 com.test.MainTest,test1
 
 org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.apache.ibatis.executor.result.ResultMapException: Error attempting to get column 'sex' from result set.  Cause: java.sql.SQLDataException: Cannot determine value type from string '男'
-### The error may exist in book/manage/mapper/BookMapper.java (best guess)
-### The error may involve book.manage.mapper.BookMapper.getStudentBySid
-### The error occurred while handling results
-### SQL: select * from student where sid = ?
-### Cause: org.apache.ibatis.executor.result.ResultMapException: Error attempting to get column 'sex' from result set.  Cause: java.sql.SQLDataException: Cannot determine value type from string '男'
 
-	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:153)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
-	at jdk.proxy1/jdk.proxy1.$Proxy15.getBorrowList(Unknown Source)
-	at com.test.MainTest.lambda$test1$0(MainTest.java:10)
-	at book.manage.sql.SqlUtil.doSqlWork(SqlUtil.java:36)
-	at com.test.MainTest.test1(MainTest.java:9)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:66)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:237)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
 Caused by: org.apache.ibatis.executor.result.ResultMapException: Error attempting to get column 'sex' from result set.  Cause: java.sql.SQLDataException: Cannot determine value type from string '男'
 	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:87)
 	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.createUsingConstructor(DefaultResultSetHandler.java:711)
@@ -418,20 +333,7 @@ Caused by: org.apache.ibatis.executor.result.ResultMapException: Error attemptin
 	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
 	... 77 more
-Caused by: java.sql.SQLDataException: Cannot determine value type from string '男'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1423)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:822)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:843)
-	at org.apache.ibatis.type.IntegerTypeHandler.getNullableResult(IntegerTypeHandler.java:37)
-	at org.apache.ibatis.type.IntegerTypeHandler.getNullableResult(IntegerTypeHandler.java:26)
-	at org.apache.ibatis.type.BaseTypeHandler.getResult(BaseTypeHandler.java:85)
-	... 110 more
+
 Caused by: com.mysql.cj.exceptions.DataConversionException: Cannot determine value type from string '男'
 	at com.mysql.cj.result.AbstractNumericValueFactory.createFromBytes(AbstractNumericValueFactory.java:65)
 	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeByteArray(MysqlTextValueDecoder.java:143)
@@ -609,3 +511,87 @@ public class Student {
 3. 异常的本质是“`final`字段无法初始化导致实例化失败”，而非“类型不匹配”（表象）。
 
 修复后，再运行`MainTest`的`test1`方法，就能正常查询到`borrow`列表并关联学生/书籍信息了。
+
+
+## 函数式编程复习
+
+```java
+@Test
+    public void test3(){
+        SqlUtil.doSqlWork(mapper -> {
+            mapper.getBookList().forEach(System.out::println);
+        });
+    }
+```
+
+你这段代码**既是Lambda表达式的写法，也是函数式编程的写法**——Lambda是函数式编程在Java中的具体实现形式，我用最通俗的话拆解，让你一眼分清两者的关系，以及这段代码到底在干嘛。
+
+### 先给核心结论
+- **Lambda表达式**：是这段代码里`mapper -> { ... }`这个“箭头语法”的叫法（语法层面）；
+- **函数式编程**：是这种“把一段逻辑（方法）当作参数传递”的编程思想（思想层面）；
+- 简单说：Lambda是Java实现函数式编程的“工具”，你这段代码用Lambda这个工具，实现了函数式编程的思想。
+
+### 用生活化例子拆解（新手秒懂）
+#### 第一步：先理解“函数式编程”的核心（思想层面）
+正常编程像“去餐厅吃饭”：
+- 你（调用方）：告诉服务员“我要番茄炒蛋、米饭”（传递“数据”）；
+- 厨师（方法）：固定做这两个菜，逻辑写死。
+
+函数式编程像“去自助厨房”：
+- 你（调用方）：不传递“吃什么菜”，而是传递“做菜的方法”（比如“番茄炒蛋的做法”）；
+- 厨房（`doSqlWork`方法）：不管你传什么做法，都帮你“开火、备锅、洗碗”（通用逻辑），具体做什么菜由你传的“做法”决定。
+
+对应到你的代码：
+- `doSqlWork`方法 = 自助厨房（封装了“打开SqlSession、获取Mapper、关闭资源”的通用逻辑）；
+- `mapper -> { mapper.getBookList().forEach(System.out::println); }` = 你传的“做菜方法”（具体要执行的数据库操作+打印逻辑）；
+- 函数式编程的核心：**把“一段逻辑（方法）”当作参数传递**，而不是只传数据。
+
+#### 第二步：理解Lambda表达式（语法层面）
+Lambda是Java 8后简化“传递一段逻辑”的语法糖，不用写繁琐的匿名内部类。
+
+##### 先看“不用Lambda的写法”（老写法，对比更易理解）
+如果不用Lambda，你这段代码要写这么多：
+```java
+@Test
+public void test3(){
+    SqlUtil.doSqlWork(new Consumer<BookMapper>() {
+        @Override
+        public void accept(BookMapper mapper) {
+            // 具体逻辑
+            mapper.getBookList().forEach(System.out::println);
+        }
+    });
+}
+```
+这段代码的核心是创建`Consumer`接口的匿名内部类，把`accept`方法里的逻辑传给`doSqlWork`——这也是函数式编程，但写法太繁琐。
+
+##### 再看你的Lambda写法（简化版）
+```java
+SqlUtil.doSqlWork(mapper -> {
+    mapper.getBookList().forEach(System.out::println);
+});
+```
+- `mapper`：对应匿名内部类`accept`方法的参数（`BookMapper mapper`）；
+- `->`：Lambda的标志，意思是“把参数传给后面的逻辑”；
+- `{ ... }`：对应匿名内部类`accept`方法里的具体逻辑；
+- 核心：Lambda把匿名内部类的代码从8行简化成3行，本质还是传递“一段逻辑”。
+
+### 再拆解你这段代码的执行流程（通俗版）
+1. 你调用`SqlUtil.doSqlWork`，并“塞进去一段逻辑”（Lambda里的内容）；
+2. `doSqlWork`方法内部：
+  - 先创建`SqlSession`、获取`BookMapper`对象（通用逻辑，不用你重复写）；
+  - 然后执行你塞进去的逻辑：调用`mapper.getBookList()`查书籍列表，再循环打印；
+3. 执行完后，`doSqlWork`自动关闭`SqlSession`（通用逻辑）。
+
+### 关键区分（新手易混）
+| 概念         | 通俗理解                | 对应代码部分                  |
+|--------------|-------------------------|-------------------------------|
+| 函数式编程   | 传“做事的方法”而非“数据” | 把查询+打印逻辑传给`doSqlWork` |
+| Lambda表达式 | 简化“传方法”的语法糖    | `mapper -> { ... }`            |
+
+### 总结（核心关键点）
+1. 你的代码**是Lambda写法**：用`->`箭头简化了匿名内部类，是语法层面的简化；
+2. 你的代码**是函数式编程写法**：核心是把“查询书籍并打印”这段逻辑当作参数传给`doSqlWork`，而非只传数据；
+3. 核心好处：`doSqlWork`只封装通用逻辑（开/关SqlSession），具体做什么（查书籍/查学生/新增）由调用方通过Lambda传递，不用重复写通用代码。
+
+简单记：Lambda是“写法”，函数式编程是“思想”，你这段代码用Lambda的写法，实现了函数式编程的思想~
